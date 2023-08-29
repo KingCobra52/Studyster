@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'main.html' %}
+
+    {% block content %}
+    <div>
+        <form method="POST" action=""> 
+        {% comment %} post/get sequence, action will send get data to same url  {% endcomment %}
+        {% csrf_token %}
+        {{form.as_p}} 
+        {% comment %} wraps paragraph around form -> make it look better  {% endcomment %}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    {% endblock content %}
+    
+</body>
+</html>
